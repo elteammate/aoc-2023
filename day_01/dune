@@ -1,0 +1,4 @@
+(executables
+ (names day01p1 day01p2)
+ (public_names day01p1 day01p2)
+ (libraries shared))
