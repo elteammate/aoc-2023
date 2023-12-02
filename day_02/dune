@@ -1,0 +1,4 @@
+(executables
+ (names day02p1 day02p2 day2magic_sorting)
+ (public_names day02p1 day02p2 day02magic_sorting)
+ (libraries shared threads))
