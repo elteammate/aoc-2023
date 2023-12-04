@@ -16,6 +16,8 @@ module String = struct
             String.sub a start' len'
 
     let to_array s = Array.init (String.length s) (String.get s)
+
+    let split_on_char' c s = String.split_on_char c s |> List.filter ((<>) "")
 end
 
 module Array = struct
@@ -43,3 +45,6 @@ let rec (--) i j =
         []
     else
         i :: ((i + 1) -- j)
+
+let and_ () x = x
+
