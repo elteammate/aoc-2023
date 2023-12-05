@@ -1,0 +1,4 @@
+(executables
+ (names day05p1 day05p2)
+ (public_names day05p1 day05p2)
+ (libraries shared threads batteries))
