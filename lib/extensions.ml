@@ -56,3 +56,24 @@ let rec (--) i j =
 
 let and_ () x = x
 
+let split_at i s = String.sub s 0 i, String.sub s i (String.length s - i)
+
+let stripl p s = 
+    match split_at (String.length p) s with
+    | pref, rest when pref = p -> Some rest
+    | _ | exception _ -> None
+
+let stripr p s =
+    match split_at (String.length s - String.length p) s with
+    | rest, suff when suff = p -> Some rest
+    | _ | exception _ -> None
+
+let stripl_or_panic p s = 
+    match stripl p s with
+    | Some res -> res
+    | _ -> failwith @@ Format.sprintf "Failed to match start of the string %s with string %s" s p
+
+let stripr_or_panic p s = 
+    match stripr p s with
+    | Some res -> res
+    | _ -> failwith @@ Format.sprintf "Failed to match end of the string %s with string %s" s p
